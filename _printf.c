@@ -47,7 +47,7 @@ int _printf(const char *format, ...)
 
 			if (format[i] == '%')
 			{
-				print_37();
+				_putchar(format[i]);
 				char_length++;
 			}
 		}
