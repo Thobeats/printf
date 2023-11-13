@@ -12,6 +12,7 @@ int print_dec(va_list args);
 int print_int(va_list args);
 int _strlen(char *s);
 int printstr(va_list s);
+int print_others(const char *format, int n, int iterator);
 /**
  * struct formatt - defines the structure of the format object
  *

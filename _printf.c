@@ -23,27 +23,24 @@ int _printf(const char *format, ...)
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
 	va_start(args, format);
-	while (format[i] && format[i] != '\0')
+
+Here:
+	while (format[i] != '\0')
 	{
-		if (format[i] != '%')
+		j = 0;
+		while (array[j].c)
 		{
-			_putchar(format[i]);
-			char_length++;
-		}
-		else
-		{
-			i++;
-			j = 0;
-			while (array[j].c)
+			if (format[i] == '%' && format[i + 1] == *(array[j].c))
 			{
-				if (format[i] == *(array[j].c))
-				{
-					char_length += array[j].func(args);
-					break;
-				}
-				j++;
+				char_length += array[j].func(args);
+				i = i + 2;
+				goto Here;
 			}
+			j++;
 		}
+
+		_putchar(format[i]);
+		char_length++;
 		i++;
 	}
 	va_end(args);
