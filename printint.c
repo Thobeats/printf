@@ -46,6 +46,7 @@ int print_int(va_list args)
 	}
 	_putchar (last + '0');
 	return (i);
+return (0);
 }
 
 #include "main.h"
@@ -93,4 +94,5 @@ int print_dec(va_list args)
 	}
 	_putchar (last + '0');
 	return (i);
+	return (0);
 }
