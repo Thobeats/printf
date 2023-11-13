@@ -10,10 +10,11 @@
 
 int printstr(va_list s)
 {
-	char str;
+	char *str;
 	int i;
 	int count;
 
+	str = va_arg(s, char *);
 	if (str == NULL)
 	{
 		str = "(nil)";
