@@ -16,7 +16,6 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-
 	va_start(args, format);
 	i = 0;
 	char_length = 0;
@@ -33,18 +32,10 @@ int _printf(const char *format, ...)
 
 			if (format[i] == '\0')
 				break;
-
-			/**Check for characters */
 			if (format[i] == 'c')
-			{
 				char_length += printchar(args);
-			}
-
 			if (format[i] == 's')
-			{
 				char_length += printstr(args);
-			}
-
 			if (format[i] == '%')
 			{
 				_putchar(format[i]);
@@ -54,6 +45,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
-
 	return (char_length);
 }
