@@ -7,15 +7,15 @@
 
 
 
-int print_int(__va_list args)
+int print_int(va_list args)
 {
-	int n = va_args(args, int);
+	int n = va_arg(args, int);
 
 	int num, last = n % 10, digit, exp = 1;
 
 	int i = 1;
 
-	n = n / 10
+	n = n / 10;
 	num = n;
 
 	if (last < 0)
@@ -49,15 +49,15 @@ int print_int(__va_list args)
 
 
 
-int print_dec(__va_list args)
+int print_dec(va_list args)
 {
-	int n = va_args(args, int);
+	int n = va_arg(args, int);
 
 	int num, last = n % 10, digit, exp = 1;
 
 	int i = 1;
 
-	n = n / 10
+	n = n / 10;
 	num = n;
 
 	if (last < 0)
