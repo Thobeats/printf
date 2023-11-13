@@ -38,10 +38,15 @@ int _printf(const char *format, ...)
 			{
 				printstr(args);
 			}
+
+			if (format[i] == '%')
+			{
+				print_37();
+			}
 		}
 		i++;
 	}
-
+	va_end(args);
 
 	return (i);
 }
