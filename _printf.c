@@ -18,15 +18,15 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 	i = 0;
-	while (*format)
+	while (format[i])
 	{
-		if (*format != '%')
+		if (format[i] != '%')
 		{
-			_putchar(*format);
+			_putchar(format[i]);
 		}
 		else
 		{
-			format++;
+			i++;
 
 			/**Check for characters */
 			if (*format == 'c')
@@ -42,5 +42,6 @@ int _printf(const char *format, ...)
 		i++;
 	}
 
-	return (1);
+
+	return (i);
 }
