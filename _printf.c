@@ -8,7 +8,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i, j, char_length;
+	int i = 0, j, char_length = 0;
 	va_list args;
 	fmt array[] = {
 		{"c", printchar},
@@ -18,11 +18,11 @@ int _printf(const char *format, ...)
 		{"d", print_dec}
 	};
 
-	if (format == NULL)
-		return (0);
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' &&!format[2])
+		return (-1);
 	va_start(args, format);
-	i = 0;
-	char_length = 0;
 	while (format[i] && format[i] != '\0')
 	{
 		if (format[i] != '%')
