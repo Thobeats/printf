@@ -29,12 +29,12 @@ int _printf(const char *format, ...)
 			i++;
 
 			/**Check for characters */
-			if (*format == 'c')
+			if (format[i] == 'c')
 			{
 				printchar(args);
 			}
 
-			if (*format == 's')
+			if (format[i] == 's')
 			{
 				printstr(args);
 			}
