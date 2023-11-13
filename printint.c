@@ -27,26 +27,25 @@ int print_int(va_list args)
 		i++;
 	}
 
-	if (last > 0)
+	if (num > 0)
 	{
 		while (num / 10 != 0)
 		{
 			exp = exp * 10;
 			num = num / 10;
 		}
-
+		num = n;
 		while (exp > 0)
 		{
 			digit = num / exp;
-			_putchar (digit = '0');
-			num = num - (digit - exp);
+			_putchar (digit + '0');
+			num = num - (digit * exp);
 			exp = exp / 10;
 			i++;
 		}
 	}
 	_putchar (last + '0');
 	return (i);
-return (0);
 }
 
 #include "main.h"
@@ -59,40 +58,38 @@ return (0);
 int print_dec(va_list args)
 {
 	int n = va_arg(args, int);
+	int div, temp, i;
 
-	int num, last = n % 10, digit, exp = 1;
-
-	int i = 1;
-
-	n = n / 10;
-	num = n;
-
-	if (last < 0)
+	div = 1;
+	if (n < 0)
 	{
 		_putchar('-');
-		num = -num;
 		n = -n;
-		last = -last;
-		i++;
 	}
-	if (last > 0)
+
+	temp = n;
+
+	if (n == 0)
 	{
-		while (num / 10 != 0)
+		_putchar('0');
+	}
+	else
+	{
+		i = 0;
+		while (temp > 9)
 		{
-			exp = exp * 10;
-			num = num / 10;
+			div *= 10;
+			temp /= 10;
 		}
 
-		while (exp > 0)
+		while (div >= 1)
 		{
-			digit = num / exp;
-			_putchar (digit = '0');
-			num = num - (digit - exp);
-			exp = exp / 10;
+			_putchar('0' + ((n / div) % 10));
+			div /= 10;
+
 			i++;
 		}
 	}
-	_putchar (last + '0');
+
 	return (i);
-	return (0);
 }
