@@ -10,9 +10,14 @@
 
 int _printf(const char *format, ...)
 {
-	int i;
+	int i, j;
 	va_list args;
 	int char_length;
+	fmt array[] = {
+		{"c", printchar},
+		{"s", printstr},
+		{"%", print_37}
+	};
 
 	if (format == NULL)
 		return (-1);
@@ -21,6 +26,7 @@ int _printf(const char *format, ...)
 	char_length = 0;
 	while (format[i])
 	{
+		j = 0;
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
@@ -29,17 +35,15 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-
 			if (format[i] == '\0')
 				break;
-			if (format[i] == 'c')
-				char_length += printchar(args);
-			if (format[i] == 's')
-				char_length += printstr(args);
-			if (format[i] == '%')
+			while (array[j].c)
 			{
-				_putchar(format[i]);
-				char_length++;
+				if (format[i] == *(array[j].c))
+				{
+					char_length += array[j].func(args);
+				}
+				j++;
 			}
 		}
 		i++;
