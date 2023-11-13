@@ -11,4 +11,21 @@ int print_37(void);
 int print_dec(va_list args);
 int print_int(va_list args);
 int _strlen(char *s);
+
+/**
+ * struct formatt - defines the structure of the format object
+ *
+ * @c: The character
+ * @func: the function
+ *
+ * Description: The structure of the formatt object
+ *
+ */
+
+typedef struct formatt
+{
+        char *c;
+        void (*func)();
+} fmt;
+
 #endif
