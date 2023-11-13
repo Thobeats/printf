@@ -5,7 +5,7 @@
  *
  * @c: the arguements
  *
- * Return: 0 for success
+ * Return: 1
  */
 
 int printchar(va_list c)
@@ -15,5 +15,5 @@ int printchar(va_list c)
 	str = va_arg(c, int);
 	_putchar(str);
 
-	return (0);
+	return (1);
 }

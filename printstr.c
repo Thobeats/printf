@@ -5,7 +5,7 @@
  *
  * @s: the args
  *
- * Return: 0 for success
+ * Return: length of the string
  */
 
 int printstr(va_list s)
@@ -23,5 +23,5 @@ int printstr(va_list s)
 	for (i = 0; i < count; i++)
 		_putchar(str[i]);
 
-	return (0);
+	return (count);
 }
