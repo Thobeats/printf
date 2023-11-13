@@ -2,9 +2,7 @@
 
 /**
  * _printf - Prints an output according to format
- *
  * @format: The format
- *
  * Return: the number of characters printed
  */
 
@@ -25,7 +23,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	i = 0;
 	char_length = 0;
-	while (format[i])
+	while (format[i] && format[i] != '\0')
 	{
 		if (format[i] != '%')
 		{
@@ -36,8 +34,6 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			j = 0;
-			if (format[i] == '\0')
-				break;
 			while (array[j].c)
 			{
 				if (format[i] == *(array[j].c))
