@@ -15,14 +15,13 @@ int _printf(const char *format, ...)
 		{"s", printstr},
 		{"%", print_37},
 		{"i", print_int},
-		{"d", print_dec}
+		{"d", print_dec}, {NULL, NULL}
 	};
 	va_start(args, format);
 	if (format == NULL || !format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
-
 Here:
 	while (format[i] != '\0')
 	{
@@ -34,6 +33,11 @@ Here:
 				char_length += array[j].func(args);
 				i = i + 2;
 				goto Here;
+			}
+			if (array[j].c == NULL)
+			{
+				print_37();
+				i++;
 			}
 			j++;
 		}
