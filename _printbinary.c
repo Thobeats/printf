@@ -9,7 +9,7 @@ int print_binary(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
 
-	int binary[32];  /* Assuming an integer is 32 bits */
+	int binary[32];
 
 	int i, char_length = 0;
 
