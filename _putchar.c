@@ -15,7 +15,7 @@ int _putchar(char c)
 		return (-1);
 
 	buffer[0] = c;
-	if ((write(STDOUT_FILENO, buffer, 1) == -1))
+	if ((write(STDOUT_FILENO, *buffer, 1) == -1))
 	{
 		return (-1);
 	}
