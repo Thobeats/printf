@@ -11,6 +11,9 @@ int _putchar(char c)
 {
 	char buffer[1024];
 	
+	if (!c)
+		return (-1);
+
 	buffer[0] = c;
 	if ((write(STDOUT_FILENO, buffer, 1) == -1))
 	{
