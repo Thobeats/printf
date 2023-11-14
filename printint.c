@@ -15,6 +15,9 @@ int print_int(va_list args)
 
 	int i = 1;
 
+	if (!n)
+		return (-1);
+
 	n = n / 10;
 	num = n;
 
@@ -49,7 +52,7 @@ int print_int(va_list args)
 }
 
 /**
-* print_dec - prints integer
+* print_dec - prints decimal
 * @args: expected arguement
 * Return: Number of characters printed
 */
@@ -60,6 +63,10 @@ int print_dec(va_list args)
 	int div, temp, i;
 
 	div = 1;
+
+	if (!n)
+		return (-1);
+
 	if (n < 0)
 	{
 		_putchar('-');
