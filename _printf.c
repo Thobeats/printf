@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	fmt array[] = {
 		{"c", printchar}, {"s", printstr},
 		{"%", print_37}, {"i", print_int},
-		{"d", print_dec}, {NULL, NULL}
+		{"d", print_int}, {NULL, NULL}
 	};
 	va_start(args, format);
 	if (format == NULL || !format || (format[0] == '%' && !format[1]))
