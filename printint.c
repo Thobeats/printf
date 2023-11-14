@@ -47,7 +47,8 @@ int print_int(va_list args)
 			i++;
 		}
 	}
-	_putchar (last + '0');
+	_putchar(last + '0');
+	_putchar('\n');
 	return (i);
 }
 
@@ -97,6 +98,8 @@ int print_dec(va_list args)
 			i++;
 		}
 	}
+
+	_putchar('\n');
 
 	return (i);
 }

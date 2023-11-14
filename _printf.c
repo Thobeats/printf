@@ -41,6 +41,7 @@ Here:
 		}
 
 		_putchar(format[i]);
+		_putchar('\n');
 		char_length++;
 		i++;
 	}
