@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-Here:
+
 	while (format[i] != '\0')
 	{
 		j = 0;
@@ -28,7 +28,7 @@ Here:
 			{
 				char_length += array[j].func(args);
 				i = i + 2;
-				goto Here;
+				break;
 			}
 			if (array[j].c == NULL)
 			{
