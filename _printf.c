@@ -11,16 +11,14 @@ int _printf(const char *format, ...)
 	int i = 0, j, char_length = 0;
 	va_list args;
 	fmt array[] = {
-		{"c", printchar},
-		{"s", printstr},
-		{"%", print_37},
-		{"i", print_int},
+		{"c", printchar}, {"s", printstr},
+		{"%", print_37}, {"i", print_int},
 		{"d", print_dec}, {NULL, NULL}
 	};
 	va_start(args, format);
 	if (format == NULL || !format || (format[0] == '%' && !format[1]))
 		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
+	if (format[0] == '%' && format[1] == '\0' && !format[2])
 		return (-1);
 Here:
 	while (format[i] != '\0')
