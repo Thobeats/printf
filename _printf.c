@@ -17,12 +17,12 @@ int _printf(const char *format, ...)
 		{"i", print_int},
 		{"d", print_dec}
 	};
-
 	va_start(args, format);
-	if (!format[0] || (format[0] == '%' && !format[1]))
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
+
 Here:
 	while (format[i] != '\0')
 	{
