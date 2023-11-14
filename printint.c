@@ -98,8 +98,5 @@ int print_dec(va_list args)
 			i++;
 		}
 	}
-
-	_putchar('\n');
-
 	return (i);
 }
