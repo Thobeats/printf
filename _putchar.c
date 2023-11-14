@@ -10,7 +10,7 @@
 int _putchar(char c)
 {
 	char buffer[1024];
-	
+
 	if (!c)
 		return (-1);
 
