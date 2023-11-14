@@ -48,7 +48,6 @@ int print_int(va_list args)
 	return (i);
 }
 
-#include "main.h"
 /**
 * print_dec - prints integer
 * @args: expected arguement
