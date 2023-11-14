@@ -1,19 +1,21 @@
 #include "main.h"
 
 /**
- * _printf - Prints an output according to format
- * @format: The format
- * Return: the number of characters printed
- */
+* _printf - Prints an output according to format
+* @format: The format
+* Return: the number of characters printed
+*/
 
 int _printf(const char *format, ...)
 {
 	int i = 0, j, char_length = 0;
+
 	va_list args;
 	fmt array[] = {
 		{"c", printchar}, {"s", printstr},
 		{"%", print_37}, {"i", print_int},
-		{"d", print_int}, {NULL, NULL}, {"b", print_binary}
+		{"d", print_int}, {"b", print_binary},
+		{NULL, NULL}
 	};
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && !format[1]))
