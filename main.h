@@ -12,6 +12,9 @@ int print_int(va_list args);
 int _strlen(char *s);
 int printstr(va_list s);
 int print_binary(va_list args);
+int print_hex(va_list args);
+int print_octal(va_list args);
+
 /**
  * struct formatt - defines the structure of the format object
  *
