@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
-
+Here:
 	while (format[i] != '\0')
 	{
 		j = 0;
@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 			{
 				char_length += array[j].func(args);
 				i = i + 2;
-				break;
+				goto Here;
 			}
 			j++;
 		}
