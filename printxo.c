@@ -8,8 +8,9 @@
  */
 int print_hex(va_list args)
 {
-    unsigned int num = va_arg(args, unsigned int);
-    return (_printf("%x", num));
+	unsigned int num = va_arg(args, unsigned int);
+
+	return (_printf("%x", num));
 }
 
 /**
@@ -19,6 +20,8 @@ int print_hex(va_list args)
  */
 int print_octal(va_list args)
 {
-    unsigned int num = va_arg(args, unsigned int);
-    return (_printf("%o", num));
+	unsigned int num = va_arg(args, unsigned int);
+
+	return (_printf("%o", num));
 }
+
